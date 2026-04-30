@@ -1,0 +1,23 @@
+{
+  "law": "Consumer Protection Act, 2019",
+  "chapters": [
+    {
+      "chapter": "Chapter II",
+      "title": "Consumer Protection Councils",
+      "sections": [
+        {
+          "section": "Section 2(7)",
+          "title": "Definition of Consumer",
+          "summary": "Explains who is considered a 'consumer' under the law, including those who buy goods or services for personal use.",
+          "example": "If you buy a phone from a store and it's defective, you are a consumer and can file a complaint."
+        },
+        {
+          "section": "Section 35",
+          "title": "Manner in which complaint shall be made",
+          "summary": "Describes how a consumer can file a complaint against unfair trade practices or defective goods.",
+          "example": "You can file a complaint with the District Commission if a company refuses to honor a warranty."
+        }
+      ]
+    }
+  ]
+}

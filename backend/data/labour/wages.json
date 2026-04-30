@@ -1,0 +1,23 @@
+{
+  "law": "Minimum Wages Act",
+  "chapters": [
+    {
+      "chapter": "General Provisions",
+      "title": "Fixation and Payment of Wages",
+      "sections": [
+        {
+          "section": "Section 3",
+          "title": "Fixing of minimum rates of wages",
+          "summary": "The government is responsible for setting the minimum wage for different types of jobs to ensure workers aren't exploited.",
+          "example": "Construction workers in Delhi must be paid at least the minimum daily rate set by the Delhi government."
+        },
+        {
+          "section": "Section 12",
+          "title": "Payment of minimum rates of wages",
+          "summary": "Every employer must pay their workers at least the minimum wage fixed by the law, without any illegal deductions.",
+          "example": "An employer cannot pay a worker less than the government-mandated rate just because they are 'learning' on the job."
+        }
+      ]
+    }
+  ]
+}

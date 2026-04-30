@@ -1,0 +1,23 @@
+{
+  "law": "Information Technology (IT) Act, 2000",
+  "chapters": [
+    {
+      "chapter": "Chapter XI",
+      "title": "Offences",
+      "sections": [
+        {
+          "section": "Section 66C",
+          "title": "Punishment for identity theft",
+          "summary": "Whoever, fraudulently or dishonestly make use of the electronic signature, password or any other unique identification feature of any other person.",
+          "example": "Using someone else's login ID and password to access their bank account or social media is identity theft."
+        },
+        {
+          "section": "Section 66D",
+          "title": "Punishment for cheating by personation by using computer resource",
+          "summary": "Punishes anyone who cheats by pretending to be someone else using a computer or communication device.",
+          "example": "Creating a fake social media profile of a famous person to trick people into sending money."
+        }
+      ]
+    }
+  ]
+}

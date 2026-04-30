@@ -1,0 +1,65 @@
+{
+  "law": "Indian Penal Code (IPC)",
+  "chapters": [
+    {
+      "chapter": "Chapter IV",
+      "title": "General Exceptions",
+      "sections": [
+        {
+          "section": "Section 82",
+          "title": "Act of a child under seven years of age",
+          "summary": "Nothing is an offence which is done by a child under seven years of age.",
+          "example": "If a 6-year-old child accidentally fires a gun, they cannot be criminally prosecuted."
+        },
+        {
+          "section": "Section 96",
+          "title": "Things done in private defence",
+          "summary": "Nothing is an offence which is done in the exercise of the right of private defence.",
+          "example": "If someone attacks you with a knife and you hit them back to save your life, it is not a crime."
+        }
+      ]
+    },
+    {
+      "chapter": "Chapter XVI",
+      "title": "Offences Affecting the Human Body",
+      "sections": [
+        {
+          "section": "Section 300",
+          "title": "Murder",
+          "summary": "Culpable homicide is murder if the act is done with the intention of causing death.",
+          "example": "Intentionally poisoning someone's drink to kill them is murder."
+        },
+        {
+          "section": "Section 323",
+          "title": "Punishment for voluntarily causing hurt",
+          "summary": "Punishes anyone who voluntarily causes bodily pain, disease, or infirmity to another.",
+          "example": "Slapping someone during a heated argument can lead to charges under this section."
+        },
+        {
+          "section": "Section 354",
+          "title": "Assault or criminal force to woman with intent to outrage her modesty",
+          "summary": "Protects women from physical assault intended to violate their dignity.",
+          "example": "Tugging at a woman's clothes or making unwanted physical contact is a serious offence."
+        }
+      ]
+    },
+    {
+      "chapter": "Chapter XVII",
+      "title": "Offences Against Property",
+      "sections": [
+        {
+          "section": "Section 378",
+          "title": "Theft",
+          "summary": "Moving movable property out of the possession of any person without their consent.",
+          "example": "Taking a laptop from a friend's house without asking them is theft."
+        },
+        {
+          "section": "Section 405",
+          "title": "Criminal breach of trust",
+          "summary": "Dishonestly misappropriating property that was entrusted to you.",
+          "example": "An employee using company funds for personal vacations is a breach of trust."
+        }
+      ]
+    }
+  ]
+}

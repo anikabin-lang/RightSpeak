@@ -1,0 +1,29 @@
+{
+  "law": "Indian Penal Code (IPC)",
+  "sections": [
+    {
+      "section": "Section 302",
+      "title": "Punishment for Murder",
+      "summary": "Whoever commits murder shall be punished with death, or imprisonment for life, and shall also be liable to fine.",
+      "example": "If a person intentionally causes the death of another, they can be charged and sentenced under this section."
+    },
+    {
+      "section": "Section 420",
+      "title": "Cheating and Dishonestly inducing delivery of property",
+      "summary": "Punishes individuals who cheat others to dishonestly obtain property or money.",
+      "example": "Creating a fake investment scheme to take money from people is a classic example of Section 420."
+    },
+    {
+      "section": "Section 376",
+      "title": "Punishment for Sexual Offence",
+      "summary": "Prescribes severe punishment, including rigorous imprisonment, for the offence of rape.",
+      "example": "Non-consensual physical acts are strictly prosecuted under this section to protect the dignity and safety of individuals."
+    },
+    {
+      "section": "Section 499",
+      "title": "Defamation",
+      "summary": "Whoever, by words spoken or intended to be read, makes or publishes any imputation concerning any person intending to harm their reputation.",
+      "example": "Writing a false and malicious article about someone to ruin their public image can lead to a defamation suit."
+    }
+  ]
+}

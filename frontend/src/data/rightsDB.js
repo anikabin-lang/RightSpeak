@@ -1,0 +1,22 @@
+export const rightsDB = [
+  { id: 1, title: "Right to Equality", laws: "Articles 14-18, Constitution of India" },
+  { id: 2, title: "Right to Freedom", laws: "Articles 19-22, Constitution of India" },
+  { id: 3, title: "Right against Exploitation", laws: "Articles 23-24, Constitution of India" },
+  { id: 4, title: "Right to Freedom of Religion", laws: "Articles 25-28, Constitution of India" },
+  { id: 5, title: "Cultural and Educational Rights", laws: "Articles 29-30, Constitution of India" },
+  { id: 6, title: "Right to Constitutional Remedies", laws: "Article 32, Constitution of India" },
+  { id: 7, title: "Right to Information (RTI)", laws: "Right to Information Act, 2005" },
+  { id: 8, title: "Right to Education (RTE)", laws: "Article 21A, Right to Education Act, 2009" },
+  { id: 9, title: "Right to Privacy", laws: "Article 21 (Puttaswamy Judgment, 2017)" },
+  { id: 10, title: "Protection from Domestic Violence", laws: "Protection of Women from Domestic Violence Act, 2005" },
+  { id: 11, title: "Consumer Rights", laws: "Consumer Protection Act, 2019" },
+  { id: 12, title: "Maternity Benefits", laws: "Maternity Benefit Act, 1961" },
+  { id: 13, title: "Right to Safe Workplace", laws: "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013" },
+  { id: 14, title: "Right to Free Legal Aid", laws: "Article 39A, Legal Services Authorities Act, 1987" },
+  { id: 15, title: "Arrest Rights (Right to be informed)", laws: "Article 22(1), Section 50 CrPC" },
+  { id: 16, title: "Right to Bail", laws: "Section 436 CrPC" },
+  { id: 17, title: "Equal Pay for Equal Work", laws: "Article 39(d), Equal Remuneration Act, 1976" },
+  { id: 18, title: "Right to Fair Trial", laws: "Article 21, Constitution of India" },
+  { id: 19, title: "Rights of Senior Citizens", laws: "Maintenance and Welfare of Parents and Senior Citizens Act, 2007" },
+  { id: 20, title: "Cyber Crime Protection", laws: "Information Technology Act, 2000" }
+];

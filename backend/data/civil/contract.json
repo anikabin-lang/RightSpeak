@@ -1,0 +1,35 @@
+{
+  "law": "Indian Contract Act",
+  "chapters": [
+    {
+      "chapter": "Chapter I",
+      "title": "Of the Communication, Acceptance and Revocation of Proposals",
+      "sections": [
+        {
+          "section": "Section 2(h)",
+          "title": "Definition of Contract",
+          "summary": "An agreement enforceable by law is a contract.",
+          "example": "A written agreement to sell a car for a specific price is a legally binding contract."
+        },
+        {
+          "section": "Section 10",
+          "title": "What agreements are contracts",
+          "summary": "All agreements are contracts if they are made by the free consent of parties competent to contract.",
+          "example": "If both adults agree to a deal without being forced, it is a valid contract."
+        }
+      ]
+    },
+    {
+      "chapter": "Chapter II",
+      "title": "Of Contracts, Voidable Contracts and Void Agreements",
+      "sections": [
+        {
+          "section": "Section 11",
+          "title": "Who are competent to contract",
+          "summary": "Every person is competent to contract who is of the age of majority and of sound mind.",
+          "example": "A minor (under 18) cannot enter into a legally binding contract in most cases."
+        }
+      ]
+    }
+  ]
+}

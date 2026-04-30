@@ -1,0 +1,41 @@
+{
+  "law": "Code of Criminal Procedure (CrPC)",
+  "chapters": [
+    {
+      "chapter": "Chapter V",
+      "title": "Arrest of Persons",
+      "sections": [
+        {
+          "section": "Section 41",
+          "title": "When police may arrest without warrant",
+          "summary": "Police can arrest a person without a warrant if they commit a cognizable offence in their presence or if a reasonable complaint exists.",
+          "example": "If someone is seen snatching a chain, the police can arrest them immediately without waiting for a court order."
+        },
+        {
+          "section": "Section 46",
+          "title": "Arrest how made",
+          "summary": "Explains the procedure for arrest, emphasizing that a woman should only be arrested by a female officer and only during daylight hours.",
+          "example": "A woman cannot be arrested after sunset or before sunrise except in extraordinary circumstances and with a magistrate's permission."
+        }
+      ]
+    },
+    {
+      "chapter": "Chapter XXXIII",
+      "title": "Provisions as to Bail and Bonds",
+      "sections": [
+        {
+          "section": "Section 437",
+          "title": "When bail may be taken in case of non-bailable offence",
+          "summary": "Provides guidelines for when a person accused of a serious (non-bailable) crime can still apply for bail from a court.",
+          "example": "If someone is accused of a crime but is very old or ill, the court might grant them bail even if the crime is serious."
+        },
+        {
+          "section": "Section 438",
+          "title": "Direction for grant of bail to person apprehending arrest (Anticipatory Bail)",
+          "summary": "Allows a person to apply for bail in advance if they believe they might be arrested for a non-bailable offence.",
+          "example": "If you suspect a false case is being filed against you, you can apply to the High Court or Sessions Court for protection from arrest."
+        }
+      ]
+    }
+  ]
+}

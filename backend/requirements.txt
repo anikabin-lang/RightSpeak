@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+httpx
+pydantic
+python-dotenv
+pymupdf
+python-docx
+python-multipart
+google-genai
+python-jose[cryptography]

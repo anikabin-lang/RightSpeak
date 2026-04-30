@@ -1,0 +1,83 @@
+{
+  "name": "Constitution of India",
+  "parts": [
+    {
+      "part": "Part I",
+      "title": "The Union and its Territory",
+      "articles": [
+        {
+          "article": "Article 1",
+          "title": "Name and territory of the Union",
+          "summary": "India, that is Bharat, shall be a Union of States.",
+          "example": "Defines the geographical and political boundary of the country."
+        },
+        {
+          "article": "Article 3",
+          "title": "Formation of new States",
+          "summary": "Parliament can form new states or change the boundaries of existing ones.",
+          "example": "The creation of Telangana from Andhra Pradesh was done using this power."
+        }
+      ]
+    },
+    {
+      "part": "Part II",
+      "title": "Citizenship",
+      "articles": [
+        {
+          "article": "Article 5",
+          "title": "Citizenship at the commencement of the Constitution",
+          "summary": "Explains who became a citizen of India when the Constitution was first adopted.",
+          "example": "People born in India or those with parents born in India were granted citizenship."
+        },
+        {
+          "article": "Article 11",
+          "title": "Parliament to regulate the right of citizenship by law",
+          "summary": "Gives Parliament the power to make laws regarding citizenship and its acquisition or termination.",
+          "example": "The Citizenship Act of 1955 was passed using this constitutional authority."
+        }
+      ]
+    },
+    {
+      "part": "Part III",
+      "title": "Fundamental Rights",
+      "articles": [
+        {
+          "article": "Article 14",
+          "title": "Equality before law",
+          "summary": "The State shall not deny to any person equality before the law.",
+          "example": "A celebrity and a common man are both treated equally by the police and courts."
+        },
+        {
+          "article": "Article 19",
+          "title": "Protection of certain rights regarding freedom of speech",
+          "summary": "Guarantees freedom of speech, assembly, association, and movement.",
+          "example": "A journalist can write an article criticizing government policy without being arrested for just expressing an opinion."
+        },
+        {
+          "article": "Article 21",
+          "title": "Protection of life and personal liberty",
+          "summary": "No person shall be deprived of their life or personal liberty except according to legal procedure.",
+          "example": "This includes the right to privacy and the right to a clean environment as declared by courts."
+        }
+      ]
+    },
+    {
+      "part": "Part IV",
+      "title": "Directive Principles of State Policy",
+      "articles": [
+        {
+          "article": "Article 39A",
+          "title": "Equal justice and free legal aid",
+          "summary": "The State shall provide free legal aid to ensure justice for the poor.",
+          "example": "If you cannot afford a lawyer, you can apply for a free legal aid counsel from the DLSA."
+        },
+        {
+          "article": "Article 44",
+          "title": "Uniform civil code for the citizens",
+          "summary": "The State shall endeavor to secure for the citizens a uniform civil code throughout the territory of India.",
+          "example": "A common set of laws for marriage, divorce, and inheritance regardless of religion."
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.options("/{rest_of_path:path}")
+async def preflight_handler():
+    return {}
+
 app.include_router(ask.router)
 app.include_router(analyze.router)
 app.include_router(voice.router)

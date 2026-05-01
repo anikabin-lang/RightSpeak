@@ -47,10 +47,15 @@ class VoiceService:
             return "STT Service not configured."
 
         try:
+            logger.info(f"Transcribing audio with content_type: {content_type}")
+            
+            # For MP4/AAC on iOS, IBM STT usually prefers audio/mp4 or audio/mpeg
+            # We pass the content_type directly from the frontend blob
+            
             response = self.stt_client.recognize(
                 audio=audio_data,
                 content_type=content_type,
-                model='en-IN', # Use the modern Large Speech Model
+                model='en-IN_Telephony' if 'mp4' in content_type else 'en-IN', # Use telephony model for compressed mobile audio if needed
                 smart_formatting=True
             ).get_result()
 

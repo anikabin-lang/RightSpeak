@@ -57,14 +57,14 @@ export default function Layout() {
         <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 py-4 md:py-8 w-full">
           <div className="flex items-center gap-4 md:gap-12">
             <button 
-              className="xl:hidden p-2 text-[#0F172A] dark:text-white"
+              className="xl:hidden p-2 text-[#0F172A] dark:text-white flex items-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="material-symbols-outlined text-2xl md:text-3xl">
                 {isMenuOpen ? 'close' : 'menu'}
               </span>
             </button>
-            <Link to="/" className="text-xl md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+            <Link to="/" className="text-lg md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
             <nav className="hidden xl:flex items-center space-x-10">
               <Link className="nav-link-underline text-[#0F172A] dark:text-white font-serif text-lg tracking-tight transition-colors" to="/dashboard">Dashboard</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/consultations">Consultations</Link>
@@ -77,9 +77,10 @@ export default function Layout() {
           
           <div className="flex items-center gap-8">
             {/* Refined Search Bar */}
-            <Link to="/app" className="hidden lg:flex items-center gap-2 bg-[#0F172A] text-white px-6 py-2.5 font-serif text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm">
-              <span className="material-symbols-outlined text-xl">add</span>
-              New Inquiry
+            <Link to="/app" className="flex items-center gap-2 bg-[#0F172A] text-white px-3 md:px-6 py-2 md:py-2.5 font-serif text-xs md:text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm">
+              <span className="material-symbols-outlined text-lg md:text-xl">add</span>
+              <span className="hidden xs:inline">New Inquiry</span>
+              <span className="xs:hidden">Inquiry</span>
             </Link>
 
             <div className="flex items-center gap-4 md:gap-6">
@@ -98,8 +99,7 @@ export default function Layout() {
                 </div>
               ) : (
                 <div className="flex items-center gap-2 md:gap-8">
-                  <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-sm md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
-                  <Link to="/app" className="hidden sm:flex bg-[#0F172A] text-white px-4 md:px-8 py-2 md:py-3 font-serif text-sm md:text-lg tracking-tight hover:bg-slate-800 transition-colors shadow-lg">Start Inquiry</Link>
+                  <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-xs md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
                 </div>
               )}
             </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://rightspeak-api.vercel.app',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://rightspeak-api.vercel.app',
 });
 
 // Add interceptor to include AppID token

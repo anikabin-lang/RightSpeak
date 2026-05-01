@@ -77,38 +77,10 @@ export default function Layout() {
           
           <div className="flex items-center gap-8">
             {/* Refined Search Bar */}
-            <div className="relative group hidden lg:block" ref={dropdownRef}>
-              <div className="absolute inset-y-0 left-4 flex items-center">
-                <span className="material-symbols-outlined text-slate-300 text-xl group-focus-within:text-[#0F172A] transition-colors">search</span>
-              </div>
-              <input 
-                className="pl-12 pr-4 py-3 bg-white border border-slate-200 focus:border-[#0F172A] focus:ring-0 font-serif text-base transition-all w-[320px] shadow-sm focus:shadow-xl" 
-                placeholder="Search Archive..." 
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onFocus={() => { if (searchTerm.length >= 3) setShowDropdown(true); }}
-                onKeyDown={handleSearchSubmit}
-              />
-              
-              {showDropdown && results.length > 0 && (
-                <div className="absolute top-full left-0 mt-2 w-full max-h-[400px] overflow-y-auto bg-white border border-slate-200 shadow-2xl z-[100]">
-                  <div className="px-5 py-3 bg-slate-50 text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-slate-400 border-b border-slate-100">
-                    Jurisdictional Results
-                  </div>
-                  {results.map((result) => (
-                    <button 
-                      key={result.id} 
-                      onClick={() => handleSelectRight(result)}
-                      className="w-full text-left px-8 py-5 hover:bg-slate-50 transition-colors border-b border-slate-100 flex flex-col gap-1"
-                    >
-                      <span className="font-serif text-lg text-[#0F172A] font-bold leading-tight">{result.title}</span>
-                      <span className="text-xs text-slate-400 font-serif italic">{result.laws}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link to="/app" className="hidden lg:flex items-center gap-2 bg-[#0F172A] text-white px-6 py-2.5 font-serif text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm">
+              <span className="material-symbols-outlined text-xl">add</span>
+              New Inquiry
+            </Link>
 
             <div className="flex items-center gap-4 md:gap-6">
               {user ? (
@@ -146,22 +118,14 @@ export default function Layout() {
               <Link className="text-2xl font-serif text-slate-400" to="/tracking" onClick={() => setIsMenuOpen(false)}>Archive</Link>
               
               <div className="pt-8 border-t border-slate-100">
-                <div className="relative mb-6">
-                  <input 
-                    className="w-full pl-12 pr-4 py-4 bg-slate-50 border-none font-serif text-lg" 
-                    placeholder="Search Archive..." 
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        handleSearchSubmit(e);
-                        setIsMenuOpen(false);
-                      }
-                    }}
-                  />
-                  <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-2xl">search</span>
-                </div>
+                <Link 
+                  to="/app" 
+                  className="w-full flex items-center justify-center gap-3 bg-[#0F172A] text-white py-4 font-serif text-lg tracking-tight shadow-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="material-symbols-outlined">add</span>
+                  New Inquiry
+                </Link>
               </div>
             </nav>
           </div>

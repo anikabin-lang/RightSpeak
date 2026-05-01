@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Mic, Square, Play, Loader2, Volume2, MessageSquare } from 'lucide-react';
 import api from '../services/api';
+import { getUser } from '../services/auth';
 
 export default function VoiceAssistant() {
   const [isRecording, setIsRecording] = useState(false);
@@ -9,6 +10,7 @@ export default function VoiceAssistant() {
   const [response, setResponse] = useState(null);
   const [audioUrl, setAudioUrl] = useState(null);
   const [error, setError] = useState(null);
+  const user = getUser();
   
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
@@ -111,10 +113,11 @@ export default function VoiceAssistant() {
           
           <button
             onClick={isRecording ? stopRecording : startRecording}
-            disabled={loading}
+            disabled={loading || !user}
             className={`relative z-10 w-24 h-24 rounded-full flex items-center justify-center transition-all ${
+              !user ? 'bg-slate-200 text-slate-400 cursor-not-allowed' :
               isRecording ? 'bg-red-600 text-white hover:bg-red-700' : 'bg-blue-600 text-white hover:bg-blue-700'
-            } shadow-lg disabled:bg-slate-300`}
+            } shadow-lg disabled:opacity-50`}
           >
             {loading ? (
               <Loader2 className="animate-spin" size={32} />
@@ -127,9 +130,16 @@ export default function VoiceAssistant() {
         </div>
 
         <div className="text-center mb-8">
-          <p className="text-lg font-medium text-slate-900">
-            {loading ? 'Processing your request...' : isRecording ? 'Listening... Tap to stop' : 'Tap to start speaking'}
-          </p>
+          {!user ? (
+            <div className="flex flex-col items-center gap-4">
+              <p className="text-lg font-medium text-slate-900">Authentication Required</p>
+              <p className="text-sm text-slate-500 max-w-xs">Please log in to use the voice assistant and receive legal synthesis via AI.</p>
+            </div>
+          ) : (
+            <p className="text-lg font-medium text-slate-900">
+              {loading ? 'Processing your request...' : isRecording ? 'Listening... Tap to stop' : 'Tap to start speaking'}
+            </p>
+          )}
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
 

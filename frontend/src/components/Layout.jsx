@@ -60,11 +60,11 @@ export default function Layout() {
               className="xl:hidden p-2 text-[#0F172A] dark:text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="material-symbols-outlined text-3xl">
+              <span className="material-symbols-outlined text-2xl md:text-3xl">
                 {isMenuOpen ? 'close' : 'menu'}
               </span>
             </button>
-            <Link to="/" className="text-2xl md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+            <Link to="/" className="text-xl md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
             <nav className="hidden xl:flex items-center space-x-10">
               <Link className="nav-link-underline text-[#0F172A] dark:text-white font-serif text-lg tracking-tight transition-colors" to="/dashboard">Dashboard</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/consultations">Consultations</Link>
@@ -97,9 +97,9 @@ export default function Layout() {
                   </button>
                 </div>
               ) : (
-                <div className="flex items-center gap-4 md:gap-8">
+                <div className="flex items-center gap-2 md:gap-8">
                   <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-sm md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
-                  <Link to="/app" className="bg-[#0F172A] text-white px-4 md:px-8 py-2 md:py-3 font-serif text-sm md:text-lg tracking-tight hover:bg-slate-800 transition-colors shadow-lg">Start Inquiry</Link>
+                  <Link to="/app" className="hidden sm:flex bg-[#0F172A] text-white px-4 md:px-8 py-2 md:py-3 font-serif text-sm md:text-lg tracking-tight hover:bg-slate-800 transition-colors shadow-lg">Start Inquiry</Link>
                 </div>
               )}
             </div>

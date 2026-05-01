@@ -55,7 +55,7 @@ export default function Landing() {
                 <span className="material-symbols-outlined text-slate-400">search</span>
               </div>
               <input 
-                className="w-full pl-16 pr-8 py-6 md:py-8 bg-white focus:ring-0 border-none font-serif text-lg md:text-xl text-[#0F172A] placeholder-slate-300 transition-all" 
+                className="w-full pl-12 md:pl-16 pr-8 py-6 md:py-8 bg-white focus:ring-0 border-none font-serif text-base md:text-xl text-[#0F172A] placeholder-slate-300 transition-all" 
                 placeholder="Inquire about jurisdictional nuances..." 
                 type="text"
                 value={query}
@@ -72,11 +72,13 @@ export default function Landing() {
           </div>
         </div>
         
-        <div className="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-300 mt-10 flex flex-wrap justify-center gap-6">
-          <span className="font-sans text-xs font-bold uppercase tracking-widest text-slate-300">Trending Research:</span>
-          <button onClick={() => {setQuery('Securities Litigation'); navigate('/app?q=Securities%20Litigation')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">Securities Litigation</button>
-          <button onClick={() => {setQuery('IP Rights'); navigate('/app?q=IP%20Rights')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">IP Rights</button>
-          <button onClick={() => {setQuery('Privacy Frameworks'); navigate('/app?q=Privacy%20Frameworks')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">Privacy Frameworks</button>
+        <div className="reveal opacity-0 translate-y-10 transition-all duration-1000 delay-300 mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          <span className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-widest text-slate-300">Trending Research:</span>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <button onClick={() => {setQuery('Securities Litigation'); navigate('/app?q=Securities%20Litigation')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">Securities Litigation</button>
+            <button onClick={() => {setQuery('IP Rights'); navigate('/app?q=IP%20Rights')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">IP Rights</button>
+            <button onClick={() => {setQuery('Privacy Frameworks'); navigate('/app?q=Privacy%20Frameworks')}} className="font-serif text-sm text-[#0F172A] hover:text-[#cf6721] transition-colors hover:underline underline-offset-8 decoration-slate-300">Privacy Frameworks</button>
+          </div>
         </div>
       </section>
 

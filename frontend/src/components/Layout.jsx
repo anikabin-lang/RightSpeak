@@ -55,16 +55,18 @@ export default function Layout() {
     <div className="bg-[#FAF9F8] dark:bg-slate-950 text-[#0F172A] dark:text-white min-h-screen flex flex-col antialiased bg-grain">
       <header className="bg-[#FAF9F8]/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-shadow duration-300">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 py-4 md:py-8 w-full">
-          <div className="flex items-center gap-4 md:gap-12">
-            <button 
-              className="xl:hidden p-2 text-[#0F172A] dark:text-white flex items-center"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <span className="material-symbols-outlined text-2xl md:text-3xl">
-                {isMenuOpen ? 'close' : 'menu'}
-              </span>
-            </button>
-            <Link to="/" className="text-lg md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center gap-2 md:gap-12 flex-1">
+              <button 
+                className="xl:hidden p-2 text-[#0F172A] dark:text-white flex items-center"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <span className="material-symbols-outlined text-2xl md:text-3xl">
+                  {isMenuOpen ? 'close' : 'menu'}
+                </span>
+              </button>
+              <Link to="/" className="text-lg md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+            </div>
             <nav className="hidden xl:flex items-center space-x-10">
               <Link className="nav-link-underline text-[#0F172A] dark:text-white font-serif text-lg tracking-tight transition-colors" to="/dashboard">Dashboard</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/consultations">Consultations</Link>
@@ -102,15 +104,14 @@ export default function Layout() {
           </div>
         </div>
 
-        {/* Horizontal Scrolling Nav for Mobile */}
         <div className="xl:hidden border-t border-slate-100 bg-white/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
-          <nav className="flex items-center space-x-8 px-6 py-4 whitespace-nowrap">
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/dashboard">Dashboard</NavLink>
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/consultations">Consultations</NavLink>
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/library">Law Library</NavLink>
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/simplify">Simplify</NavLink>
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/voice">Voice</NavLink>
-            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/tracking">Archive</NavLink>
+          <nav className="flex items-center space-x-10 px-8 py-4 whitespace-nowrap">
+            <NavLink end className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/dashboard">Dashboard</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/consultations">Consultations</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/library">Law Library</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/simplify">Simplify</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/voice">Voice</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold border-b-2 border-[#0F172A]' : 'text-slate-400'} font-serif text-sm tracking-tight pb-1`} to="/tracking">Archive</NavLink>
           </nav>
         </div>
 

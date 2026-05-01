@@ -249,6 +249,16 @@ p {
   font-size: 0.875rem;
   text-align: center;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 .loading-spinner {
   animation: spin 1s linear infinite;

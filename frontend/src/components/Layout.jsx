@@ -75,24 +75,20 @@ export default function Layout() {
             </nav>
           </div>
           
-          <div className="flex items-center gap-8">
-            {/* Refined Search Bar */}
-            <Link to="/app" className="flex items-center gap-2 bg-[#0F172A] text-white px-3 md:px-6 py-2 md:py-2.5 font-serif text-xs md:text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm">
+          <div className="flex items-center gap-2 md:gap-8">
+            {/* Inquiry Button */}
+            <Link to="/app" className="flex items-center gap-2 bg-[#0F172A] text-white px-3 md:px-6 py-2 md:py-2.5 font-serif text-xs md:text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm shrink-0">
               <span className="material-symbols-outlined text-lg md:text-xl">add</span>
               <span className="hidden xs:inline">New Inquiry</span>
               <span className="xs:hidden">Inquiry</span>
             </Link>
 
-            <div className="flex items-center gap-4 md:gap-6">
+            <div className="flex items-center gap-4 md:gap-6 shrink-0">
               {user ? (
                 <div className="flex items-center gap-2 md:gap-4">
-                  <div className="flex flex-col items-end hidden sm:flex">
-                    <span className="font-serif text-[10px] md:text-sm font-bold text-[#0F172A] dark:text-white uppercase tracking-tighter">Account</span>
-                    <span className="font-serif text-sm md:text-lg text-slate-400 italic leading-none">{user.name}</span>
-                  </div>
                   <button 
                     onClick={logout}
-                    className="text-[10px] md:text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4 ml-2"
+                    className="text-[10px] md:text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4"
                   >
                     Logout
                   </button>
@@ -104,6 +100,18 @@ export default function Layout() {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Horizontal Scrolling Nav for Mobile */}
+        <div className="xl:hidden border-t border-slate-100 bg-white/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
+          <nav className="flex items-center space-x-8 px-6 py-4 whitespace-nowrap">
+            <Link className="text-[#0F172A] font-serif text-sm font-bold tracking-tight" to="/dashboard">Dashboard</Link>
+            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/consultations">Consultations</Link>
+            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/library">Law Library</Link>
+            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/simplify">Simplify</Link>
+            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/voice">Voice</Link>
+            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/tracking">Archive</Link>
+          </nav>
         </div>
 
         {/* Mobile Menu Overlay */}

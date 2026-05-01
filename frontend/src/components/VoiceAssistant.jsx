@@ -18,7 +18,11 @@ export default function VoiceAssistant() {
   const startRecording = useCallback(async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorderRef.current = new MediaRecorder(stream);
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm') 
+        ? 'audio/webm' 
+        : 'audio/mp4';
+
+      mediaRecorderRef.current = new MediaRecorder(stream, { mimeType });
       audioChunksRef.current = [];
 
       mediaRecorderRef.current.ondataavailable = (event) => {
@@ -28,7 +32,7 @@ export default function VoiceAssistant() {
       };
 
       mediaRecorderRef.current.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        const audioBlob = new Blob(audioChunksRef.current, { type: mimeType });
         await handleVoiceQuery(audioBlob);
       };
 
@@ -57,8 +61,9 @@ export default function VoiceAssistant() {
     setResponse(null);
     setAudioUrl(null);
 
+    const extension = audioBlob.type.includes('mp4') ? 'mp4' : 'webm';
     const formData = new FormData();
-    formData.append('file', audioBlob, 'voice_query.webm');
+    formData.append('file', audioBlob, `voice_query.${extension}`);
 
     try {
       const res = await api.post('/voice/query', formData, {

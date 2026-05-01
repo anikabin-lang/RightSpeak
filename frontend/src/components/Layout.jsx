@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { rightsDB } from '../data/rightsDB';
 import { getUser, logout } from '../services/auth';
 
@@ -105,12 +105,12 @@ export default function Layout() {
         {/* Horizontal Scrolling Nav for Mobile */}
         <div className="xl:hidden border-t border-slate-100 bg-white/50 backdrop-blur-sm overflow-x-auto no-scrollbar">
           <nav className="flex items-center space-x-8 px-6 py-4 whitespace-nowrap">
-            <Link className="text-[#0F172A] font-serif text-sm font-bold tracking-tight" to="/dashboard">Dashboard</Link>
-            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/consultations">Consultations</Link>
-            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/library">Law Library</Link>
-            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/simplify">Simplify</Link>
-            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/voice">Voice</Link>
-            <Link className="text-slate-400 font-serif text-sm tracking-tight" to="/tracking">Archive</Link>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/dashboard">Dashboard</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/consultations">Consultations</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/library">Law Library</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/simplify">Simplify</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/voice">Voice</NavLink>
+            <NavLink className={({ isActive }) => `${isActive ? 'text-[#0F172A] font-bold' : 'text-slate-400'} font-serif text-sm tracking-tight`} to="/tracking">Archive</NavLink>
           </nav>
         </div>
 

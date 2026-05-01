@@ -65,9 +65,9 @@ export default function LawLibrary() {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-80px)] bg-slate-50">
+    <div className="flex flex-col lg:flex-row min-h-[calc(100vh-80px)] bg-slate-50">
       {/* Sidebar Navigation */}
-      <aside className="w-80 bg-white border-r border-slate-200 flex flex-col">
+      <aside className={`${selectedCategory ? 'hidden lg:flex' : 'flex'} w-full lg:w-80 bg-white border-r border-slate-200 flex-col`}>
         <div className="p-6 border-b border-slate-100">
           <h2 className="text-xl font-bold text-slate-900 font-serif mb-4 flex items-center gap-2">
             <Book size={24} className="text-blue-600" />
@@ -126,7 +126,16 @@ export default function LawLibrary() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 overflow-y-auto p-12">
+      <main className={`${selectedCategory ? 'flex' : 'hidden lg:flex'} flex-1 flex-col overflow-y-auto p-6 md:p-12`}>
+        {selectedCategory && (
+          <button 
+            onClick={() => setSelectedCategory(null)}
+            className="lg:hidden flex items-center gap-2 text-blue-600 mb-6 font-medium"
+          >
+            <ChevronRight size={18} className="rotate-180" />
+            Back to Categories
+          </button>
+        )}
         {loading ? (
           <div className="h-full flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
@@ -146,7 +155,7 @@ export default function LawLibrary() {
         ) : lawData ? (
           <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-500">
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-4 font-serif">
+              <h1 className="text-2xl md:text-4xl font-bold text-slate-900 mb-4 font-serif">
                 {lawData.name || lawData.law}
               </h1>
             </div>
@@ -232,11 +241,11 @@ function DetailCard({ item, showCategory = false }) {
                 </span>
               )}
             </div>
-            <h4 className="text-2xl font-bold text-slate-900 font-serif">{item.title}</h4>
+            <h4 className="text-xl md:text-2xl font-bold text-slate-900 font-serif">{item.title}</h4>
           </div>
         </div>
         
-        <p className="text-slate-600 text-lg leading-relaxed mb-6">
+        <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
           {item.summary}
         </p>
 

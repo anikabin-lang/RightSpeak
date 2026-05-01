@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto py-32 px-12">
+    <div className="w-full max-w-5xl mx-auto py-12 md:py-32 px-6 md:px-12">
       <main>
         <div className="mb-20">
           <QueryInput onSubmit={handleQuery} isLoading={isLoading} initialQuery={searchParams.get('q') || ''} />
@@ -52,10 +52,10 @@ export default function Home() {
 
         {response && (
           <div className="mt-32 flex flex-col gap-20">
-            <div className="text-center mb-12 border-b border-slate-200 pb-20">
-               <span className="font-sans text-xs font-bold text-slate-400 uppercase tracking-[0.4em] block mb-6">Synthesis Analysis</span>
-               <h2 className="font-serif text-6xl font-black text-[#0F172A]">The RightSpeak Brief</h2>
-            </div>
+          <div className="text-center mb-8 md:mb-12 border-b border-slate-200 pb-10 md:pb-20">
+             <span className="font-sans text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-[0.4em] block mb-4 md:mb-6">Synthesis Analysis</span>
+             <h2 className="font-serif text-3xl md:text-6xl font-black text-[#0F172A]">The RightSpeak Brief</h2>
+          </div>
           
             <div className="grid gap-16">
               <ResponseCard 
@@ -87,10 +87,10 @@ export default function Home() {
               </ResponseCard>
             </div>
 
-            <div className="bg-white border border-slate-100 p-16 mt-16 shadow-2xl rounded-2xl relative overflow-hidden">
+            <div className="bg-white border border-slate-100 p-8 md:p-16 mt-16 shadow-2xl rounded-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#cf6721]"></div>
-              <span className="font-sans text-xs font-bold uppercase tracking-[0.3em] text-slate-400 block mb-6">Mandatory Disclaimer</span>
-              <p className="font-serif text-base text-slate-500 leading-relaxed italic opacity-80">{response.disclaimer}</p>
+              <span className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-slate-400 block mb-6">Mandatory Disclaimer</span>
+              <p className="font-serif text-sm md:text-base text-slate-500 leading-relaxed italic opacity-80">{response.disclaimer}</p>
             </div>
           </div>
         )}

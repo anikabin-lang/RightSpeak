@@ -33,3 +33,7 @@ Thumbs.db
 
 # Backend Data (Keeping structure but maybe not large binary files if any)
 # backend/data/
+
+# Machine Specific
+nohup.out
+*.plist

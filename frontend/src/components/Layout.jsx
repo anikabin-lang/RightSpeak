@@ -9,6 +9,7 @@ export default function Layout() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [user, setUser] = useState(getUser());
   const dropdownRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -53,9 +54,17 @@ export default function Layout() {
   return (
     <div className="bg-[#FAF9F8] dark:bg-slate-950 text-[#0F172A] dark:text-white min-h-screen flex flex-col antialiased bg-grain">
       <header className="bg-[#FAF9F8]/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-shadow duration-300">
-        <div className="max-w-[1440px] mx-auto flex justify-between items-center px-12 py-8 w-full">
-          <div className="flex items-center gap-12">
-            <Link to="/" className="text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+        <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 py-4 md:py-8 w-full">
+          <div className="flex items-center gap-4 md:gap-12">
+            <button 
+              className="xl:hidden p-2 text-[#0F172A] dark:text-white"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span className="material-symbols-outlined text-3xl">
+                {isMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+            <Link to="/" className="text-2xl md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
             <nav className="hidden xl:flex items-center space-x-10">
               <Link className="nav-link-underline text-[#0F172A] dark:text-white font-serif text-lg tracking-tight transition-colors" to="/dashboard">Dashboard</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/consultations">Consultations</Link>
@@ -101,29 +110,62 @@ export default function Layout() {
               )}
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 md:gap-6">
               {user ? (
-                <div className="flex items-center gap-4">
-                  <div className="flex flex-col items-end">
-                    <span className="font-serif text-sm font-bold text-[#0F172A] dark:text-white uppercase tracking-tighter">Account</span>
-                    <span className="font-serif text-lg text-slate-400 italic leading-none">{user.name}</span>
+                <div className="flex items-center gap-2 md:gap-4">
+                  <div className="flex flex-col items-end hidden sm:flex">
+                    <span className="font-serif text-[10px] md:text-sm font-bold text-[#0F172A] dark:text-white uppercase tracking-tighter">Account</span>
+                    <span className="font-serif text-sm md:text-lg text-slate-400 italic leading-none">{user.name}</span>
                   </div>
                   <button 
                     onClick={logout}
-                    className="text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4 ml-2"
+                    className="text-[10px] md:text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4 ml-2"
                   >
                     Logout
                   </button>
                 </div>
               ) : (
-                <>
-                  <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
-                  <Link to="/app" className="bg-[#0F172A] text-white px-8 py-3 font-serif text-lg tracking-tight hover:bg-slate-800 transition-colors shadow-lg">Start Inquiry</Link>
-                </>
+                <div className="flex items-center gap-4 md:gap-8">
+                  <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-sm md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
+                  <Link to="/app" className="bg-[#0F172A] text-white px-4 md:px-8 py-2 md:py-3 font-serif text-sm md:text-lg tracking-tight hover:bg-slate-800 transition-colors shadow-lg">Start Inquiry</Link>
+                </div>
               )}
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMenuOpen && (
+          <div className="xl:hidden fixed inset-0 top-[73px] md:top-[113px] bg-white dark:bg-slate-950 z-50 overflow-y-auto animate-slide-in">
+            <nav className="flex flex-col p-8 space-y-6">
+              <Link className="text-2xl font-serif text-[#0F172A] dark:text-white" to="/dashboard" onClick={() => setIsMenuOpen(false)}>Dashboard</Link>
+              <Link className="text-2xl font-serif text-slate-400" to="/consultations" onClick={() => setIsMenuOpen(false)}>Consultations</Link>
+              <Link className="text-2xl font-serif text-slate-400" to="/library" onClick={() => setIsMenuOpen(false)}>Law Library</Link>
+              <Link className="text-2xl font-serif text-slate-400" to="/simplify" onClick={() => setIsMenuOpen(false)}>Simplify</Link>
+              <Link className="text-2xl font-serif text-slate-400" to="/voice" onClick={() => setIsMenuOpen(false)}>Voice</Link>
+              <Link className="text-2xl font-serif text-slate-400" to="/tracking" onClick={() => setIsMenuOpen(false)}>Archive</Link>
+              
+              <div className="pt-8 border-t border-slate-100">
+                <div className="relative mb-6">
+                  <input 
+                    className="w-full pl-12 pr-4 py-4 bg-slate-50 border-none font-serif text-lg" 
+                    placeholder="Search Archive..." 
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleSearchSubmit(e);
+                        setIsMenuOpen(false);
+                      }
+                    }}
+                  />
+                  <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-300 text-2xl">search</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       <main className="flex-grow flex flex-col pt-0">

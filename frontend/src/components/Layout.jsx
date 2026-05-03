@@ -55,18 +55,19 @@ export default function Layout() {
     <div className="bg-[#FAF9F8] dark:bg-slate-950 text-[#0F172A] dark:text-white min-h-screen flex flex-col antialiased bg-grain">
       <header className="bg-[#FAF9F8]/90 backdrop-blur-md dark:bg-slate-950/90 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-shadow duration-300">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 py-4 md:py-8 w-full">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-2 md:gap-12 flex-1">
-              <button 
-                className="xl:hidden p-2 text-[#0F172A] dark:text-white flex items-center"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                <span className="material-symbols-outlined text-2xl md:text-3xl">
-                  {isMenuOpen ? 'close' : 'menu'}
-                </span>
-              </button>
-              <Link to="/" className="text-lg md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
-            </div>
+          <div className="flex items-center gap-2 md:gap-12">
+            <button 
+              className="xl:hidden p-2 text-[#0F172A] dark:text-white flex items-center"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span className="material-symbols-outlined text-2xl md:text-3xl">
+                {isMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+            <Link to="/" className="text-lg md:text-4xl font-serif font-black tracking-tighter text-[#0F172A] dark:text-white uppercase shrink-0 hover:opacity-80 transition-opacity">RightSpeak</Link>
+          </div>
+
+          <div className="flex items-center gap-6 md:gap-10">
             <nav className="hidden xl:flex items-center space-x-10">
               <Link className="nav-link-underline text-[#0F172A] dark:text-white font-serif text-lg tracking-tight transition-colors" to="/dashboard">Dashboard</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/consultations">Consultations</Link>
@@ -75,31 +76,31 @@ export default function Layout() {
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/voice">Voice</Link>
               <Link className="nav-link-underline text-slate-400 dark:text-slate-500 font-serif text-lg tracking-tight hover:text-[#0F172A] transition-colors" to="/tracking">Archive</Link>
             </nav>
-          </div>
-          
-          <div className="flex items-center gap-2 md:gap-8">
-            {/* Inquiry Button */}
-            <Link to="/app" className="flex items-center gap-2 bg-[#0F172A] text-white px-3 md:px-6 py-2 md:py-2.5 font-serif text-xs md:text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm shrink-0">
-              <span className="material-symbols-outlined text-lg md:text-xl">add</span>
-              <span className="hidden xs:inline">New Inquiry</span>
-              <span className="xs:hidden">Inquiry</span>
-            </Link>
+            
+            <div className="flex items-center gap-2 md:gap-8">
+              {/* Inquiry Button */}
+              <Link to="/app" className="flex items-center gap-2 bg-[#0F172A] text-white px-3 md:px-6 py-2 md:py-2.5 font-serif text-xs md:text-base tracking-tight hover:bg-slate-800 transition-colors shadow-sm shrink-0">
+                <span className="material-symbols-outlined text-lg md:text-xl">add</span>
+                <span className="hidden xs:inline">New Inquiry</span>
+                <span className="xs:hidden">Inquiry</span>
+              </Link>
 
-            <div className="flex items-center gap-4 md:gap-6 shrink-0">
-              {user ? (
-                <div className="flex items-center gap-2 md:gap-4">
-                  <button 
-                    onClick={logout}
-                    className="text-[10px] md:text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4"
-                  >
-                    Logout
-                  </button>
-                </div>
-              ) : (
-                <div className="flex items-center gap-2 md:gap-8">
-                  <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-xs md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
-                </div>
-              )}
+              <div className="flex items-center gap-4 md:gap-6 shrink-0">
+                {user ? (
+                  <div className="flex items-center gap-2 md:gap-4">
+                    <button 
+                      onClick={logout}
+                      className="text-[10px] md:text-xs font-sans font-bold uppercase tracking-widest text-[#cf6721] hover:text-[#0F172A] transition-colors border-l border-slate-200 pl-4"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 md:gap-8">
+                    <Link to="/login" className="text-[#0F172A] dark:text-slate-100 font-serif text-xs md:text-lg tracking-tight hover:opacity-70 transition-opacity">Log In</Link>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
